@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Detector</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
+
+    <header class="navbar">
+        <div class="container">
+
+            <div class="logo">
+                AI Image Detector
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+
+            <button class="btn-get-started">
+                Get Started
+            </button>
+
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section class="hero">
+
+            <div class="hero-left">
+
+                <div class="badge">
+                    ✨ Powered by Gemini Vision
+                </div>
+
+                <h1>
+                    Detect <span>AI.</span><br>
+                    Verify <span>Reality.</span>
+                </h1>
+
+                <div id="analysisPanel" style="display:none;">
+
+    <div class="result-image">
+        <img id="previewImage" src="" alt="Preview">
+    </div>
+
+    <div id="verdictBadge" class="verdict-badge">
+        Waiting...
+    </div>
+
+    <h2 id="verdictText">
+        No Analysis Yet
+    </h2>
+
+    <div class="confidence-section">
+
+        <p>
+            Confidence:
+            <span id="confidenceValue">0</span>%
+        </p>
+
+        <div class="confidence-bar">
+            <div id="confidenceFill"></div>
+        </div>
+
+    </div>
+
+    <h3>Analysis Insights</h3>
+
+    <ul id="reasonsList"></ul>
+
+</div>
+
+            <div class="hero-right">
+
+                <div class="upload-card" id="uploadCard">
+
+                    <div class="upload-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+
+                    <p>
+                        Drag & Drop Image or
+                        <span>Browse</span>
+                    </p>
+
+                    <p class="filename"></p>
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/jpeg,image/png,image/webp"
+                        hidden
+                    >
+
+                    <button class="analyze-btn">
+                        Analyze Image
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
